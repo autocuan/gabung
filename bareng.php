@@ -43,7 +43,6 @@ goto gofood;
 echo "\n".color("red","-] Message: ".$message);
 }
 gofood:
-reff:
 $data = '{"referral_code":"G-Z6WZGKM"}';
 $claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
 $message = fetch_value($claim,'"message":"','"');
