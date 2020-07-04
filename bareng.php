@@ -43,16 +43,6 @@ goto gofood;
 echo "\n".color("red","-] Message: ".$message);
 }
 gofood:
-$data = '{"referral_code":"G-Z6WZGKM"}';
-$claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
-$message = fetch_value($claim,'"message":"','"');
-if(strpos($claim, 'Promo kamu sudah bisa dipakai')){
-echo "\n".color("green","+] Message: ".$message);
-goto gofood;
-}else{
-echo "\n".color("red","-] Message: ".$message);
-}
-gofood:
 sleep(7);
 }
 $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD2206"}');
