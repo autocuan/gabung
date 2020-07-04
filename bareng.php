@@ -110,7 +110,9 @@ echo color("nevy","\n▬▬▬▬▬▬▬▬▬▬▬▬* BISMILLAH *▬▬▬�
         $message = fetch_value($code1,'"message":"','"');
         if(strpos($code1, 'Promo kamu sudah bisa dipakai.')){
         echo "\n".color("green","🔓▶️ Message: ".$message);
-        goto gofood;
+        sleep (6);
+	}
+	goto gofood;
         }else{
         echo "\n".color("red","🔐▶️ Message: ".$message);
         echo "\n".color("nevy","?] Mau Redeem Voucher?: y/n ");
@@ -123,7 +125,9 @@ echo color("nevy","\n▬▬▬▬▬▬▬▬▬▬▬▬* BISMILLAH *▬▬▬�
         $message = fetch_value($claim,'"message":"','"');
         if(strpos($claim, 'Promo kamu sudah bisa dipakai')){
         echo "\n".color("green","+] Message: ".$message);
-        goto gofood;
+        sleep (7);
+	}
+	goto gofood;
         }else{
         echo "\n".color("red","-] Message: ".$message);
         }
