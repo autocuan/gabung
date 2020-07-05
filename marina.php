@@ -203,11 +203,11 @@ echo color("nevy","\n▬▬▬▬▬▬▬▬▬▬▬▬* BISMILLAH *▬▬▬�
                                         $debug['text'] = $pesan;
                                         $debug['respon'] = json_decode($datas, true);
          setpin:
-         echo "\n".color("purple","🔧▶️ PIN e SISAN gak Om ? !!!: Y/N ");
+         echo "\n".color("purple","🔧▶️ SET PIN GOPAY ? !!!: Y/N ");
          $pilih1 = trim(fgets(STDIN));
          if($pilih1 == "y" || $pilih1 == "Y"){
          //if($pilih1 == "y" && strpos($no, "628")){
-         echo color("nevy","▬▬▬▬▬▬▬▬▬▬▬▬▬▬🔧 IKI PIN MU OJO PROTES = 123123 🔧▬▬▬▬▬▬▬▬▬▬▬▬")."\n";
+         echo color("nevy","▬▬▬▬▬▬▬▬▬▬▬▬▬▬🔧 PIN GOPAY = 123123 🔧▬▬▬▬▬▬▬▬▬▬▬▬")."\n";
          $data2 = '{"pin":"123123"}';
          $getotpsetpin = request("/wallet/pin", $token, $data2, null, null, $uuid);
          echo "OTP PIN 6 digit : ";
@@ -217,20 +217,20 @@ echo color("nevy","\n▬▬▬▬▬▬▬▬▬▬▬▬* BISMILLAH *▬▬▬�
          }else if($pilih1 == "n" || $pilih1 == "N"){
          die();
          }else{
-         echo color("red","-] WADAW GAGAL OM!!!\n");
+         echo color("red","-] GAGAL!!!\n");
          }
          }
          }
          }else{
-         echo color("red","-] OTP MU KELIRU ");
+         echo color("red","-] OTP SALAH ");
          echo"\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n";
-         echo color("purple","!] JAJAL MENEH\n");
+         echo color("purple","!] MASUKIN NOMER ULANG\n");
          goto ulang;
          }
          }else{
-         echo color("red","-] Nomormu wes kedaftar ngono kok.");
+         echo color("red","-] Nomor udah keregist.");
          echo"\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n";
-         echo color("purple","!] Coba Nomer Fresh Liyone yo? \n");
+         echo color("purple","!] Coba Nomer Fresh Lainnya \n");
          goto ulang;
          }
 //  }
