@@ -133,6 +133,22 @@ echo color("nevy","\n▬▬▬▬▬▬▬▬▬▬▬▬* BISMILLAH *▬▬▬�
         $boba09 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"EATLAH"}');
         $messageboba09 = fetch_value($boba09,'"message":"','"');
         echo "\n".color("green","# Message: ".$messageboba09);
+	sleep(10);
+	echo "\n".color("nevy","?] Gelem Vocer?: y/n ");
+	$pilihan = trim(fgets(STDIN));
+	if($pilihan == "y" || $pilihan == "Y"){
+	echo color("red","===========(GOLEK VOUCHER)===========");
+	reff:
+	$data = '{"referral_code":"G-DJHBY7Y"}';
+	$claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
+	$message = fetch_value($claim,'"message":"','"');
+	if(strpos($claim, 'Promo kamu sudah bisa dipakai')){
+	echo "\n".color("green","+] Message: ".$message);
+	goto gofood;
+	}else{
+	echo "\n".color("red","-] Message: ".$message);
+	}
+	gofood:
         sleep(3);
         $cekvoucher = request('/gopoints/v3/wallet/vouchers?limit=13&page=1', $token);
         $total = fetch_value($cekvoucher,'"total_vouchers":',',');
